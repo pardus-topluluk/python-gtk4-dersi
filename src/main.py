@@ -7,13 +7,18 @@ from gi.repository import Gtk
 
 from MainWindow import MainWindow
 
+win = None
 # Uygulama aktif edildiğinde, ilk çalıştığında
 def on_activate(app):
-    # Yeni pencere oluştur
-    win = MainWindow(app)
+    global win
+
+    if not win:
+        # Yeni pencere oluştur
+        win = MainWindow(app)
 
     # Ekranda göster
     win.present()
+
 
 # Create a new application
 app = Gtk.Application(application_id='tr.org.pardus.ornek-uygulama')
