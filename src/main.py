@@ -24,5 +24,11 @@ def on_activate(app):
 app = Gtk.Application(application_id='tr.org.pardus.ornek-uygulama')
 app.connect('activate', on_activate)
 
+# Shortcuts for Actions
+app.set_accels_for_action('win.new', ['<Ctrl>t'])
+app.set_accels_for_action('win.open', ['<Ctrl>o'])
+app.set_accels_for_action('win.save', ['<Ctrl>s'])
+app.set_accels_for_action('win.save-as', ['<Ctrl><Shift>s'])
+
 # Run the application
 app.run(None)
