@@ -4,6 +4,15 @@ from gi.repository import Gtk, Gio
 
 import FileOperations
 
+import locale
+from locale import gettext as _
+
+
+APPNAME = "pardus-ornek-uygulama"
+TRANSLATIONS_PATH = "/usr/share/locale"
+locale.bindtextdomain(APPNAME, TRANSLATIONS_PATH)
+locale.textdomain(APPNAME)
+
 class MainWindow(Gtk.ApplicationWindow):
     def __init__(self, app):
         super().__init__(application=app)
@@ -41,28 +50,28 @@ class MainWindow(Gtk.ApplicationWindow):
 
     def setup_window(self):
         self.set_default_size(600, 400)
-        self.set_title("Metin Editörü")
+        self.set_title(_("My Text Editor"))
 
     def setup_headerbar(self):
         btn_new = Gtk.Button(
             icon_name="document-new-symbolic",
             action_name="win.new",
-            tooltip_text="Creates a new empty document."
+            tooltip_text=_("Creates a new empty document.")
         )
         btn_open = Gtk.Button(
             icon_name="document-open-symbolic",
             action_name="win.open",
-            tooltip_text="Open a file."
+            tooltip_text=_("Open a file.")
         )
         btn_save = Gtk.Button(
             icon_name="document-save-symbolic",
             action_name="win.save",
-            tooltip_text="Save the current file."
+            tooltip_text=_("Save the current file.")
         )
         btn_save_as = Gtk.Button(
             icon_name="document-save-as-symbolic",
             action_name="win.save-as",
-            tooltip_text="Save the current file as different file."
+            tooltip_text=_("Save the current file as different file.")
         )
 
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -112,12 +121,12 @@ class MainWindow(Gtk.ApplicationWindow):
     # == CALLBACKS ==
     def on_action_win_new_activated(self, action, params):
         self.set_textview_text("")
-        self.set_title("Metin Editörü")
+        self.set_title(_("My Text Editor"))
         self._current_working_file = None
     
     def on_action_win_open_activated(self, action, params):
         self._open_file_chooser = Gtk.FileChooserNative(
-            title="Open File",
+            title=_("Open File"),
             transient_for=self,
             action=Gtk.FileChooserAction.OPEN,
             accept_label="_Open",
@@ -158,7 +167,7 @@ class MainWindow(Gtk.ApplicationWindow):
     
     def on_action_win_save_as_activated(self, action, params):
         self._save_file_chooser = Gtk.FileChooserNative(
-            title="Save File",
+            title=_("Save File"),
             transient_for=self,
             action=Gtk.FileChooserAction.SAVE,
             accept_label="_Save",

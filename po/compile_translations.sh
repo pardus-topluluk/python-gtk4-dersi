@@ -1,0 +1,1 @@
+msgfmt tr.po -o tr.mo
