@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Pardus Ornek Uygulama
+Comment=My Text Editor is a simple text editor.
+Comment[tr]=Benim Metin Düzenleyicim basit bir metin düzenleyicidir.
+Exec=pardus-ornek-uygulama
+Icon=pardus-ornek-uygulama
+Terminal=false
+Type=Application
+Categories=Games;
+StartupNotify=true
+Keywords=my,text,editor
+Keywords[tr]=benim,metin,editor

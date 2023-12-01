@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-23 20:20+0300\n"
-"PO-Revision-Date: 2023-11-23 20:26+0300\n"
+"PO-Revision-Date: 2023-11-29 12:39+0300\n"
 "Last-Translator: Emin Fedar <emin.fedar@pardus.org.tr>\n"
 "Language-Team: Turkish <gelistirici@pardus.org.tr>\n"
 "Language: tr\n"
@@ -38,7 +38,7 @@ msgstr "Dosyayı Farklı Kaydet."
 
 #: ../src/MainWindow.py:124
 msgid "My Text Editor"
-msgstr "Benim Metin Editörün"
+msgstr "Benim Metin Editörüm"
 
 #: ../src/MainWindow.py:129
 msgid "Open File"
